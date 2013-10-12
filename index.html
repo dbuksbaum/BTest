@@ -1,69 +1,32 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>My Web Test Playground</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Web Test Playground</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css">
+  </head>
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+  <body>
+    <script type="text/x-handlebars">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Bloggr</a>
+        <ul class="nav">
+          <li><a href="#">Posts</a></li>
+          <li><a>About</a></li>
+        </ul>
+      </div>
+    </div>
+    </script>
 
-        <script type="text/x-handlebars" id="application">
-            <!-- Add your site or application content here -->
-            <h1>Hello world! This is HTML5 Boilerplate.</h1>
-            {{outlet}}
-        </script>
 
-        <script type="text/x-handlebars" id="index">
-            <p>
-                Our content goes here
-            </p>
-            {{#linkTo "roll"}}Start rolling dice!{{/linkTo}}
-        </script>
-
-        <script type="text/x-handlebars" id="roll">
-            <p>
-                Enter your required dice roll below, for instance "3d6" will roll three six sided dice.
-            </p>
-
-            {{input valueBinding="rollString" placeholder="Enter your dice roll, e.g. '3d6' here"}}
-            <button {{action "rollDice"}}>Roll Dice</button>
-
-            {{#if errors}}
-            <div class="errors">
-                {{errors}}
-            </div>
-            {{/if}}
-
-            <hr>
-
-            <h2>Results</h2>
-            {{#each roll in content}}
-            <div class="roll">
-                <span class="roll-number">{{roll.diceNumber}}</span>
-                <span class="roll-result" {{bindAttr style="roll.proportion"}}>{{roll.numberOfRolls}}</span>
-            </div>
-            {{else}}
-            No results yet
-            {{/each}}
-        </script>
-
-        <script src="js/vendor/jquery-2.0.0.js"></script>
-        <script src="js/vendor/handlebars-1.0.0.js"></script>
-        <script src="js/vendor/ember.js"></script>
-        <script src="js/application.js"></script>
-    </body>
+    <script src="js/libs/jquery-2.0.0.js"></script>
+    <script src="js/libs/handlebars-1.0.0.js"></script>
+    <script src="js/libs/ember.js"></script>
+    <script src="js/application.js"></script>
+  </body>
 </html>
