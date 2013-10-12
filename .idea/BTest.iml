@@ -8,6 +8,8 @@
     <orderEntry type="library" name="jQuery-2.0.0" level="application" />
     <orderEntry type="library" name="emberjs 1.0.0" level="application" />
     <orderEntry type="library" name="handlebars 1.0.0" level="application" />
+    <orderEntry type="library" name="showdown" level="application" />
+    <orderEntry type="library" name="moment" level="application" />
   </component>
 </module>
 
