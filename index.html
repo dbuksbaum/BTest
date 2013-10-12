@@ -31,6 +31,34 @@
             <p>
                 Our content goes here
             </p>
+            {{#linkTo "roll"}}Start rolling dice!{{/linkTo}}
+        </script>
+
+        <script type="text/x-handlebars" id="roll">
+            <p>
+                Enter your required dice roll below, for instance "3d6" will roll three six sided dice.
+            </p>
+
+            {{input valueBinding="rollString" placeholder="Enter your dice roll, e.g. '3d6' here"}}
+            <button {{action "rollDice"}}>Roll Dice</button>
+
+            {{#if errors}}
+            <div class="errors">
+                {{errors}}
+            </div>
+            {{/if}}
+
+            <hr>
+
+            <h2>Results</h2>
+            {{#each roll in content}}
+            <div class="roll">
+                <span class="roll-number">{{roll.diceNumber}}</span>
+                <span class="roll-result" {{bindAttr style="roll.proportion"}}>{{roll.numberOfRolls}}</span>
+            </div>
+            {{else}}
+            No results yet
+            {{/each}}
         </script>
 
         <script src="js/vendor/jquery-2.0.0.js"></script>
