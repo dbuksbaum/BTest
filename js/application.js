@@ -2,7 +2,8 @@
  * Created by david on 10/11/13.
  */
 
-var DemoApp = Ember.Application.create(
+var DemoApp = Ember.Application.create();
+/*
     {
        LOG_TRANSITIONS: true,
        LOG_BINDINGS: true,
@@ -11,4 +12,5 @@ var DemoApp = Ember.Application.create(
        LOG_VERSION: true,
        debugMode: true
 });
+*/
 
